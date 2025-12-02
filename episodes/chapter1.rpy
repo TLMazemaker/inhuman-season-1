@@ -1,6 +1,7 @@
 default persistent.name = "Lynn"
 default persistent.gender = "Male"
 default persistent.pronouns = persistent.pronouns_male
+$ persistent.healing_items = []
 
 label setup_character:
 
@@ -766,7 +767,8 @@ label chapter1_1:
         
         "Putting Lee's compass back into your bag, you step out..."
     
-    # Change backdrop here
+    show bg village day
+    with fade
     
     "...And immediately several pairs of eyes look at your direction."
     
@@ -928,7 +930,8 @@ label chapter1_1:
             
             "Simultaneously, all the incident flashbacks started to kick in once more."
 
-            # Change backdrop here
+            show bg jungle
+            with fade
 
             if persistent.tough_decisions_1['TD1'] == 'supplies':
 
@@ -942,15 +945,18 @@ label chapter1_1:
 
                 mc "Dammit..."
             
-            # Change backdrop here
+            show bg village day
+            with fade
 
             mc "Oh no... No no no... Get out of my head!"
 
-            # Change backdrop here
+            show bg jungle
+            with fade
 
             mc "{i}I hope you get eaten alive by the zombies!{/i}"
 
-            # Change backdrop here
+            show bg road night
+            with fade
 
             mc "Agh!!! Why won't you leave me alone!"
 
@@ -958,7 +964,7 @@ label chapter1_1:
 
             mc "Wha-- Who's there?"
 
-            "Gripping your bow, you take out an arrow from your bag. You slowly walk away from the sound, hoping to get back to your colony."
+            "Gripping your bow, you slowly walk {i}away{/i} from the sound, hoping to get back to your colony."
 
             mc "{i}It's probably nothing, just the wind [persistent.name], just the wind.{/i}"
 
@@ -970,7 +976,7 @@ label chapter1_1:
 
             "You run back to where you came from. Past some abandoned buildings, until..."
 
-            azure "[persistent.name!]"
+            azure "[persistent.name]!"
 
             mc "Azure? What are you doing here?"
 
@@ -1007,6 +1013,9 @@ label premium1:
     azure "The materials of this house are old too. See the scrapes in the wall?"
     
     azure "Now come on, we're supposed to explore the inside part of the villa."
+
+    show bg villa
+    with fade
 
     "You both step inside, the cold and eerie wind suddenly blows down your body. Making you shiver."
 
@@ -1305,6 +1314,9 @@ label premium1:
 
     $ persistent.side_quests_1['An Abandoned Villa'] = True
 
+    show bg road night
+    with fade
+
     azure "You know, that encounter really taught us something."
 
     mc "And that is?"
@@ -1536,6 +1548,22 @@ label chapter1_resolution:
 
     $ notify("Chapter 1 Complete", "You've finished Chapter 1. Don't forget to save!")
 
+    $ persistent.progress['complete_ch_1'] = True
+    $ renpy.save_persistent()
+
     $ renpy.pause(1.0)
-    
-    return
+
+    menu:
+
+        "Continue?"
+
+        "Yes":
+
+            "Don't forget to save your game."
+            
+            jump chapter2
+
+        "No":
+            
+            call screen episodes
+            return
