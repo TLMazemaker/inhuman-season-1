@@ -6,7 +6,7 @@ $ persistent.healing_items = []
 label setup_character:
 
     $ persistent.name = renpy.input("Before we start, who are you: ", default=persistent.name)
-    $ persistent.name = persistent.name.strip()
+    $ persistent.name = persistent.name.strip().title()
 
     menu:
 
@@ -42,7 +42,7 @@ label chapter1:
 
     call setup_character
 
-    show bg van
+    scene bg van
     with fade
 
     "You're sitting in a van, ready for your first mission."
@@ -135,7 +135,7 @@ label chapter1:
 
     "You both step out of the van, fuming at each other..."
     
-    show bg jungle
+    scene bg jungle
     with fade
 
     "The woods are dark, you carefully remember your training. How to observe your surroundings in poor lighting."
@@ -669,7 +669,7 @@ label chapter1_1:
     
     "The driver starts the engine and drives you back to the colony."
 
-    show bg van
+    scene bg van
     with fade
 
     if persistent.tough_decisions_1['TD1'] == 'supplies':
@@ -680,14 +680,14 @@ label chapter1_1:
         
         "Before your argument with him... When you said you wanted him to die..."
 
-        show bg jungle
+        scene bg jungle
         with fade
 
         mc "{i}Screw that! I'm outta here!{/i}"
 
         mc "{i}I hope you get eaten alive by the zombies!{/i}"
 
-        show bg van
+        scene bg van
         with fade
 
         mc "{i}Lee...{/i}"
@@ -767,7 +767,7 @@ label chapter1_1:
         
         "Putting Lee's compass back into your bag, you step out..."
     
-    show bg village day
+    scene bg village day
     with fade
     
     "...And immediately several pairs of eyes look at your direction."
@@ -930,7 +930,7 @@ label chapter1_1:
             
             "Simultaneously, all the incident flashbacks started to kick in once more."
 
-            show bg jungle
+            scene bg jungle
             with fade
 
             if persistent.tough_decisions_1['TD1'] == 'supplies':
@@ -945,17 +945,17 @@ label chapter1_1:
 
                 mc "Dammit..."
             
-            show bg village day
+            scene bg village day
             with fade
 
             mc "Oh no... No no no... Get out of my head!"
 
-            show bg jungle
+            scene bg jungle
             with fade
 
             mc "{i}I hope you get eaten alive by the zombies!{/i}"
 
-            show bg road night
+            scene bg road night
             with fade
 
             mc "Agh!!! Why won't you leave me alone!"
@@ -1014,7 +1014,7 @@ label premium1:
     
     azure "Now come on, we're supposed to explore the inside part of the villa."
 
-    show bg villa
+    scene bg villa
     with fade
 
     "You both step inside, the cold and eerie wind suddenly blows down your body. Making you shiver."
@@ -1202,9 +1202,9 @@ label premium1:
 
     azure "Okay, I'll start. The first category is... {color=#00FF00}{b}Vehicle.{/b}{/color}"
 
-    default opt1 = False
-    default opt2 = False
-    default opt3 = False
+    $ opt1 = False
+    $ opt2 = False
+    $ opt3 = False
 
     call loop1
 
@@ -1314,7 +1314,7 @@ label premium1:
 
     $ persistent.side_quests_1['An Abandoned Villa'] = True
 
-    show bg road night
+    scene bg road night
     with fade
 
     azure "You know, that encounter really taught us something."
@@ -1545,6 +1545,9 @@ label chapter1_resolution:
     mc "I warned you! I WARNED YOU!"
 
     "Too much pressure, you pass out."
+
+    scene bg black
+    with fade
 
     $ notify("Chapter 1 Complete", "You've finished Chapter 1. Don't forget to save!")
 

@@ -1,3 +1,5 @@
+$ renpy.clear_persistent()
+$ renpy.save_persistent()
 default gun = False
 label prologue:
 
@@ -9,7 +11,7 @@ label prologue:
 
     "{i}Now Playing as Dr. Megan.{/i}"
 
-    show bg lab
+    scene bg lab
     with fade
 
     "You're in a laboratory doing an illegal experiment with your mentor... Professor Tondor."
@@ -200,7 +202,7 @@ label prologue:
 
     "You immediately pack some things and leave the lab."
 
-    show bg car
+    scene bg car
     with fade
 
     "Your forehead is filled with sweat. Hands shaking, you slowly breathe to calm your nerves as you drive the car."
@@ -213,7 +215,7 @@ label prologue:
 
     char1 "Time to get my hands dirty."
 
-    show bg cemetery
+    scene bg cemetery
     with fade
 
     "You went out to the cemetery... Dig a hole just deep enough, and carefully lie Professor Tondor's body down before covering it back again."
@@ -320,7 +322,7 @@ label prologue:
 
     "You feel every single pain as the zombies mutilate your body..."
 
-    show bg black
+    scene bg black
     with fade
     
     "Until there's no more light you see from your eyes when the zombies chow on your head."
