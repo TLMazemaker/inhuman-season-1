@@ -10,8 +10,8 @@ define zombie = Character("Zombie", color="#FF0000")
 define driver = Character("Driver")
 define lee = Character("Lee")
 define jason = Character("Jason")
-define mom = Character("Mom")
-define dad = Character("Dad")
+define mom = Character("Mom") # Real name Betsheba
+define dad = Character("Dad") # Real name David
 define fabien = Character("Fabien")
 define clover = Character("Clover", color="#37FCFF")
 define everyone = Character("Everyone")
