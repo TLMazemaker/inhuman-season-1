@@ -73,6 +73,8 @@ label chapter5:
 
     exaqlyon "Suit yourselves, fair warning though, this is going to be rough."
 
+    exaqlyon "Even more brutal than before."
+
     "Exaqlyon looks at Terrence."
 
     terrence "What?"
@@ -83,4 +85,7 @@ label chapter5:
 
     exaqlyon "Alright, so we\'re doing this together again."
 
-    
+
+
+    call screen episodes
+    return
