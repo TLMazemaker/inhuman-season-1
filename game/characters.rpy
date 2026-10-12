@@ -12,6 +12,8 @@ define lee = Character("Lee")
 define jason = Character("Jason")
 define mom = Character("Mom") # Real name Betsheba
 define dad = Character("Dad") # Real name David
+define david = Character("David") # Real name David
+define betsheba = Character("Betsheba") # Real name Betsheba
 define fabien = Character("Fabien")
 define clover = Character("Clover", color="#37FCFF")
 define everyone = Character("Everyone")
